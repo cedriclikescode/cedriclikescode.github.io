@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<script src="wasm_exec.js"></script>
-<script>
-// Polyfill
-if (!WebAssembly.instantiateStreaming) {
-    WebAssembly.instantiateStreaming = async (resp, importObject) => {
-        const source = await (await resp).arrayBuffer();
-        return await WebAssembly.instantiate(source, importObject);
-    };
-}
+<html>
+<head>
+<title>Cedriclikescode</title>
+</head>
+<body>
 
-const go = new Go();
-WebAssembly.instantiateStreaming(fetch("yourgame.wasm"), go.importObject).then(result => {
-    go.run(result.instance);
-});
-</script>
+<h1>My website</h1>
+<p>Ebitengine WASM games mirror:</p>
+<p><a href="https://cedriclikescode.github.io/twenty48/">2048 (Ebitengine example)</a></p>
+</body>
+</html>
+
+
